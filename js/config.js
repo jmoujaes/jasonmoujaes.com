@@ -1,7 +1,7 @@
 var config = {
   'name': 'Jason Moujaes',
   'backgroundcolor': 'white',
-  'bio': 'Learning as much as possible, as often as possible.',
+  'bio': 'There is more to learn.',
   'facebook': '',
   'github': 'https://github.com/rebbuz',
   'linkedin': 'https://www.linkedin.com/in/jmoujaes',
@@ -9,5 +9,5 @@ var config = {
   'resume': 'JasonMoujaes_Resume.pdf',
   'twitter': '',
   'projectsite': 'https://github.com/rebbuz/simple-dev-portfolio',
-  'img404' : 'img/sad-pup.jpg',
+  'img404' : 'img/sadpup.jpg',
 };
