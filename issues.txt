@@ -1,0 +1,3 @@
+List items stay white when background color of page changes
+
+

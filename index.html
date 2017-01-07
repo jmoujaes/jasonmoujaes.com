@@ -67,8 +67,9 @@
           <div class="card card-outline-info">
             <img class="card-img-top img-fluid mx-auto d-block" src="img/sample-project.jpg">
             <div class="card-block">
-	      <h2 class="card-title text-xs-center text-muted">AI Botski</h2>
-	      <p class="card-text">My cornerstone project at XYU's machine learning program. This bot can beat a 10th grader at a game of chess after training it once. This is purely a sample project and does not exist to my knowledge. However, you can extend your portfolio by adding cards like this. Follow the link below to check out the Botski.</p>
+	      <h2 class="card-title text-xs-center text-muted">Pennymine Project</h2>
+	      <p class="card-text">The goal of this project is to predict whether a penny stock will close a winner or a loser the next day. The plan is to achieve this using data mining. At a high level, I will collect promotional data and price data on penny stocks, and then I will apply machine learning techniques and algorithms to predict the next day’s winners/losers. The data collection piece of this project is achieved using Python. Data storage is handled with PostgreSQL, and WEKA is the tool being used to do machine learning. At the time of writing, the project is halfway complete. Various penny stocks were chosen based on a set of criteria. Historical price data was collected, and a few machine learning algorithms were tested with the data. The results showed that historical price data alone is not enough to predict stock performance. Next steps are to collect promotional data from online forums and newsletters, combine it with previously collected price data, and run it through machine learning algorithms again in an attempt to produce better results. Feel free to take a look at the Google Doc to learn more about this project and things that have been tried so far.</p>
+
 	      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="card-linkt" target="_blank">Check it out!</a>
             </div>
           </div>
@@ -84,17 +85,6 @@
 
     console.log("config values: " + JSON.stringify(config));
 
-    // if a config item is left empty or has a url fragment '#'
-    // then remove the element from the page
-    for (var key in config) {
-      if (config.hasOwnProperty(key)) {
-        if (config[key] === '') {
-          console.log(key + " is not configured and will be hidden.");
-          var element = document.getElementById(key);
-          element.parentNode.removeChild(element);
-        }
-      }
-    }
 
     // set the various config values
     document.title = config.name;
@@ -110,6 +100,19 @@
     document.getElementById("twitter-link").href = config.twitter;
     document.getElementById("facebook-link").href = config.facebook;
     document.getElementById("resume-link").href = config.resume;
+
+    // if a config item is left empty or has a url fragment '#'
+    // then remove the element from the page
+    for (var key in config) {
+      if (config.hasOwnProperty(key)) {
+        if (config[key] === '') {
+          console.log(key + " is not configured and will be hidden.");
+          var element = document.getElementById(key);
+          element.parentNode.removeChild(element);
+        }
+      }
+    }
+
   };
 
   // call the init function
