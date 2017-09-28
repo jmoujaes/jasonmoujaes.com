@@ -4,7 +4,7 @@ var config = {
   'bio': 'There is more to learn.',
   'facebook': '',
   'github': 'https://github.com/rebbuz',
-  'linkedin': 'https://www.linkedin.com/in/jmoujaes',
+  'linkedin': '',
   'profilepic': 'img/profilepic.jpg',
   'resume': 'JasonMoujaes_Resume.pdf',
   'twitter': '',
