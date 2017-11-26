@@ -44,10 +44,10 @@
           <div class="card card-outline-info">
             <img class="card-img-top img-fluid mx-auto d-block" src="img/pennymine_pic.jpg">
             <div class="card-block">
-	      <h2 class="card-title text-xs-center text-muted">Pennymine Project</h2>
-	      <p class="card-text">The goal of this project is to use data mining techniques to predict whether a penny stock will close a winner or a loser the next day. At the time of writing, the project is halfway complete. Various penny stocks were chosen based on a set of criteria. Historical price data was collected, and some machine learning algorithms were tested on the data. The results showed that historical price data alone is not enough to predict stock performance. Next steps are to collect promotional data from online forums and newsletters and combine it with previously collected price data in an attempt to produce better results. Take a look at the Google Doc to learn more about this project and things that have been tried so far.</p>
+          <h2 class="card-title text-xs-center text-muted">Pennymine Project</h2>
+          <p class="card-text">The goal of this project is to use data mining techniques to predict whether a penny stock will close a winner or a loser the next day. At the time of writing, the project is halfway complete. Various penny stocks were chosen based on a set of criteria. Historical price data was collected, and some machine learning algorithms were tested on the data. The results showed that historical price data alone is not enough to predict stock performance. Next steps are to collect promotional data from online forums and newsletters and combine it with previously collected price data in an attempt to produce better results. Take a look at the Google Doc to learn more about this project and things that have been tried so far.</p>
 
-	      <a href="https://drive.google.com/open?id=0BwBLWBO5O-fXTm90TWFWejhnN1U" class="card-linkt" target="_blank">Check it out!</a>
+          <a href="https://drive.google.com/open?id=0BwBLWBO5O-fXTm90TWFWejhnN1U" class="card-linkt" target="_blank">Check it out!</a>
             </div>
           </div>
 
@@ -100,7 +100,6 @@
 
     console.log("config values: " + JSON.stringify(config));
 
-
     // set the various config values
     document.title = config.name;
     document.querySelector("body").style.backgroundColor = config.backgroundcolor;
@@ -108,7 +107,7 @@
     document.getElementById("profilename").innerHTML = config.name;
     document.getElementById("bio").innerHTML = config.bio;
     document.getElementById("projectsite").href = config.projectsite;
-    
+
     // social
     document.getElementById("github-link").href = config.github;
     document.getElementById("linkedin-link").href = config.linkedin;
