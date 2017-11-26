@@ -1,7 +1,7 @@
 var config = {
   'name': 'Jason Moujaes',
   'backgroundcolor': 'white',
-  'bio': 'There is more to learn.',
+  'bio': 'Welcome to my site!',
   'facebook': '',
   'github': 'https://github.com/rebbuz',
   'linkedin': '',
