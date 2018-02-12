@@ -3,7 +3,7 @@ var config = {
   'backgroundcolor': 'white',
   'bio': 'Welcome to my site!',
   'facebook': '',
-  'github': 'https://github.com/rebbuz',
+  'github': 'https://github.com/jmoujaes',
   'linkedin': '',
   'profilepic': 'img/profilepic.jpg',
   'resume': 'JasonMoujaes_Resume.pdf',
