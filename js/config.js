@@ -8,6 +8,6 @@ var config = {
   'profilepic': 'img/profilepic.jpg',
   'resume': 'JasonMoujaes_Resume.pdf',
   'twitter': '',
-  'projectsite': 'https://github.com/rebbuz/simple-dev-portfolio',
+  'projectsite': 'https://github.com/jmoujaes/simple-dev-portfolio',
   'img404' : 'img/sadpup.jpg',
 };
