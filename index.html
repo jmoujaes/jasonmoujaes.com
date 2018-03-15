@@ -9,7 +9,7 @@
 
     <!-- link stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap4.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
     <!-- pull in config values -->
@@ -18,78 +18,51 @@
 
   <body>
     <div class="container">
-        <div class="card-columns">
+      <div class="card-columns">
 
-          <!-- Bio -->
-          <div class="card card-outline-primary">
-            <div class="card-block">
-              <h2 class="card-title text-xs-center text-muted">About Me</h2>
-            </div>
-            <a id="profilepic-full"><img id="profilepic-thumb" class="card-img-top img-fluid thumbnail mx-auto d-block" src="#"></a>
-            <div class="card-block">
-              <h3 id="profilename">My Name</h3>
-              <p id="bio" class="card-text"></p>
-            </div>
-          </div>
+      <!-- Bio -->
+      <div class="card p-3 border border-light">
+        <h2 class="card-title text-center text-muted">About Me</h2>
+        <a id="profilepic-full"><img id="profilepic-thumb" class="img-fluid img-thumbnail w-75 rounded mx-auto d-block border border-dark" src="#"></a>
 
+        <div class="card-body ml-4">
+          <h3 id="profilename">My Name</h3>
+          <p id="bio" class="card-text"></p>
+          <p id="email" class="card-text">&#128231;&nbsp;<a id="email-link"></a></p> <!-- &#128231; is the email character -->
+        </div>
+      </div> <!-- end bio -->
 
-          <!-- This Site -->
-          <div class="card card-outline-success">
-            <div class="card-block">
-              <p class="card-text">This site template is on <a id="projectsite" target="_blank" href="#">GitHub</a> for anyone to use. It is easily configurable via a config file. It can be extended as well to fit your portfolio needs. Simply add more cards that showcase previous projects, education, etc.</p>
-            </div>
-          </div>
+      <!-- Social -->
+      <div class="card p-3 border border-dark">
+        <h2 class="card-title text-center text-muted">Look Here</h2>
+        <ul class="list-group list-group-flush">
+          <li id="github" class="list-group-item">
+            <a id="github-link" target="_blank"><i class="fa fa-github"></i>  Github</a>
+          </li>
+          <li id="linkedin" class="list-group-item">
+            <a id="linkedin-link" target="_blank"><i class="fa fa-linkedin"></i>  LinkedIn</a>
+          </li>
+          <li id="twitter" class="list-group-item">
+            <a id="twitter-link" target="_blank"><i class="fa fa-twitter"></i>  Twitter</a>
+          </li>
+          <li id="facebook" class="list-group-item">
+            <a id="facebook-link" target="_blank"><i class="fa fa-facebook"></i>  Facebook</a>
+          </li>
+          <li id="resume" class="list-group-item">
+            <a id="resume-link" target="_blank"><i class="fa fa-file-pdf-o"></i> Resume</a>
+          </li>
+        </ul>
+      </div> <!-- end social -->
 
-          <!-- Pennymine Project -->
-          <div class="card card-outline-info">
-            <img class="card-img-top img-fluid mx-auto d-block" src="img/pennymine_pic.jpg">
-            <div class="card-block">
-          <h2 class="card-title text-xs-center text-muted">Pennymine Project</h2>
-          <p class="card-text">The goal of this project is to use data mining techniques to predict whether a penny stock will close a winner or a loser the next day. At the time of writing, the project is halfway complete. Various penny stocks were chosen based on a set of criteria. Historical price data was collected, and some machine learning algorithms were tested on the data. The results showed that historical price data alone is not enough to predict stock performance. Next steps are to collect promotional data from online forums and newsletters and combine it with previously collected price data in an attempt to produce better results. Take a look at the Google Doc to learn more about this project and things that have been tried so far.</p>
+      <!-- This Site -->
+      <div class="card p-3 border border-success">
+        <p class="card-text">This site template is on <a id="projectsite" target="_blank" href="#">GitHub</a> for anyone to use. It is easily configurable via a config file. It can be extended as well to fit your portfolio needs. Simply add more cards that showcase previous projects, education, etc.</p> 
+      </div>
 
-          <a href="https://drive.google.com/open?id=0BwBLWBO5O-fXTm90TWFWejhnN1U" class="card-linkt" target="_blank">Check it out!</a>
-            </div>
-          </div>
+      <!-- Extendable Cards -->
 
-        <br /><br /><br /><br />
-
-          <!-- Social -->
-          <div class="card card-outline-danger">
-            <div class="card-block">
-              <h2 class="card-title text-muted text-xs-center">Look Here</h2>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li id="github" class="list-group-item">
-                <a id="github-link" target="_blank"><i class="fa fa-github"></i>  Github</a>
-              </li>
-              <li id="linkedin" class="list-group-item">
-                <a id="linkedin-link" target="_blank"><i class="fa fa-linkedin"></i>  LinkedIn</a>
-              </li>
-              <li id="twitter" class="list-group-item">
-                <a id="twitter-link" target="_blank"><i class="fa fa-twitter"></i>  Twitter</a>
-              </li>
-              <li id="facebook" class="list-group-item">
-                <a id="facebook-link" target="_blank"><i class="fa fa-facebook"></i>  Facebook</a>
-              </li>
-              <li id="resume" class="list-group-item">
-                <a id="resume-link" target="_blank"><i class="fa fa-file-pdf-o"></i> Resume</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Volunteer Work -->
-          <div class="card card-outline-success">
-            <div class="card-block">
-              <h2 class="card-title text-muted text-xs-center">Volunteer Work</h2>
-            </div>
-            <a href="http://www.shweir.gov.lb/" target="_blank"><img class="img-fluid img-rounded" src="img/shweirlogo.jpg"></a>
-            <div class="card-block">
-              <p class="card-text">A website for my hometown's municipality in Dhour el Shweir, Lebanon.</p>
-            </div>
-          </div>
-
-    </div>
-
+      </div> <!-- end card-columns -->
+    </div> <!-- end container -->
 
   <script type="text/javascript">
   function init() {
@@ -105,6 +78,8 @@
     document.getElementById("profilepic-full").href = config.profilepic;
     document.getElementById("profilename").innerHTML = config.name;
     document.getElementById("bio").innerHTML = config.bio;
+    document.getElementById("email-link").href = "mailto:" + config.email;
+    document.getElementById("email-link").innerText = config.email;
     document.getElementById("projectsite").href = config.projectsite;
 
     // social
