@@ -1,3 +1,21 @@
 body {
   padding: 25px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.6em;
+}
+
+a:link {
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+a:link,
+a:link:hover,
+a:link:active {
+  color: #0095dd;
+}
+
+a:visited {
+  color: #c2e;
 }

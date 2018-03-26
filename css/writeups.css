@@ -1,0 +1,102 @@
+/**
+This design takes many of the styles
+used by the Firefox Reader View.
+See it in firefox by visiting
+chrome://global/skin/aboutReader.css
+**/
+
+body {
+    padding: 64px 51px;
+    color: #333333;
+    background-color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+    max-width: 30em;
+    margin: 0 auto;
+    font-size: 20px;
+    display: block;
+    text-align: start;
+    line-height: 1.6em;
+}
+
+.container * {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.6em;
+  line-height: 1.25em;
+}
+
+h2 {
+  font-size: 1.2em;
+  line-height: 1.51em;
+}
+
+h3 {
+  font-size: 1em;
+  line-height: 1.66em;
+}
+
+a:link {
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+a:link,
+a:link:hover,
+a:link:active {
+  color: #0095dd;
+}
+
+a:visited {
+  color: #c2e;
+}
+
+
+p, code, pre, blockquote,
+ul, ol, li, figure {
+  margin: -10px -10px 20px -10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+code, pre {
+  white-space: pre-wrap;
+  font-size: 18px;
+}
+
+blockquote {
+  padding:0;
+  padding-inline-start: 16px;
+}
+
+li {
+  margin-bottom: 0;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: -10px;
+}
+
+ul, ol {
+  padding: 0;
+}
+
+ul {
+  padding-inline-start: 45px;
+  list-style: disc;
+}
+
+ol {
+  padding-inline-start: 30px;
+  list-style: decimal;
+}

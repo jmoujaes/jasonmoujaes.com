@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width; user-scalable=0" />
+
+  <link rel="stylesheet" href="css/writeups.css" type="text/css"/>
+
+  <title>Pennymine - Jason Moujaes</title>
+</head>
+
+<body>
+  <div class="container">
+    <a href="index.html">Go back home</a>
+
+    <article>
+      <h1>Pennymine</h1>
+      <p>Technologies used: PostgreSQL, Python, Scrapy, SQLAlchemy, WEKA.<br />
+       Full paper: <a href="https://drive.google.com/open?id=1R0IHxM6IXmfPhq481oRVwCgF9cRG_oIgkkIrnROBr3g">https://drive.google.com/open?id=1R0IHxM6IXmfPhq481oRVwCgF9cRG_oIgkkIrnROBr3g</a></p>
+
+      <h2>The Objective</h2>
+      <p>Use machine learning to predict whether a penny stock will close up or down the next day.</p>
+
+      <h2>The Process</h2>
+      <p>This section will go over the tools used, and the tasks that were completed to see this project through.</p>
+      <p>At a high level, penny stock data needed to be collected. Then it was cleaned to remove inconsistencies and anomalies. After that, features were chosen that were thought to produce more accurate predictions. Then prediction models were tested on the data, and finally the results were evaluated.</p>
+
+      <p>To perform this project, it was decided to use the following technologies</p>
+      <h4>Toolbox</h4>
+      <ul>
+        <li>PostgreSQL database for storing the data.</li>
+        <li>Python for collecting, transforming, and sending the data for storage.</li>
+        <li>Scrapy, a python library, for scraping web pages.</li>
+        <li>SQLAlchemy, a python library, to create an Object Relational Mapping between the Python scripting/scraping code and the Postgres database.</li>
+        <li>WEKA open source toolkit to run machine learning algorithms on the collected data.</li>
+        <li>Yahoo_finance, a python library, to gather historical price data on stocks.</li>
+      </ul>
+
+      <h4>Collecting the Data</h4>
+      <p>First it was necessary to get a set of tickers to collect data on. The following set of tickers was produced using Google’s Stock Screener with criteria of $5M minimum market cap, $0 to $1 price range, and average volume of $500,000+ :</p>
+
+      <blockquote><p>XXII, NDN, AMOVF, ANAD, AXAS, ACOL, BIRT, AEA, AATI, ARO, ERBB, HCT, ATRS, AREX, ACIIQ, MWIP, ASTI, ARP, ATOS, AONEQ, BCCI, BLTA, BAA, BIOD, BIEL, BLSP, BDBD, BBEP, IVIXF, CEC, CVM, CTIC, CRC, CANV, CBIS, CVEO, CLOW, CSA, FITX, CMLS, CYTX, DFG, DEWM, DRYS, EPGL, XCO, ECR, EBIO, ELTP, EXXI, FFMGF, GTATQ, GALE, GST, GNKOQ, GEQU, GSAT, GOL, GSS, GDPM, GBSN, GPL, PHOT, ZINCQ, HK, HEB, HEMP, HYSR, IDTA, IDCN, INSV, ICLD, KEG, LVSDF, LLBO, LF, LINE, LNCO, LQMT, MDMN, MONIF, MNKD, MCOA, MSTX, MJNA, MCPIQ, MYEC, NXTD, NBGGY, NAVB, NM, NNUP, ORIG, PMCS, PACD, PGNPF, PGH, PWE, PMCB, PSID, RXMD, PPCH, PVHO, PSWS, QTM, RMHB, RRR, REXX, RBYCF, SDOC, SSE, SGLB, SXE, SUG, SFSF, STPFQ, SNTA, BNHLF, TTCM, TEA, TNE, TRTC, TNB, TCPTF, THLD, TGD, TPAC, TPLM, UPL, UNIS, UEC, VLDI, VSPC, VMEM, VPRO, VTCQ, WRES, WHEN, XOMA</p></blockquote>
+
+      <p>During the first iteration of the project, Scrapy was used to scrape the NASDAQ site for historical price data on the above tickers. However, after some more searching, it was decided to use the yahoo_finance python package instead of scraping the NASDAQ site. The main reasons for that change were that it simplified the codebase, and it made the system more reliable. The data was collected for one year prior, ranging from 2015-02-24 to 2016-02-23.</p>
+
+      <p>The data points collected from yahoo finance included the <i>date, ticker, day_open, day_close, day_high, day_low, day_volume, and avg_daily_volume.</i></p>
+
+      <h4>Cleaning the Data</h4>
+      <p>After collecting the data, storing it in the database, and looking at it with WEKA, it was time to clean the data.</p>
+      <ul>
+        <li>Stock ticker NDN had weird values for many of its attributes, so it was removed completely from the dataset. For example, on 2016-02-22 NDN’s day_open was reported to be $9500. 261 records were deleted.</li>
+        <li>TNB had weird values for many of its attributes, so it was removed completely from the dataset. For example, on 2016-02-19 TNB’s day_open was $7500. 261 records were deleted.</li>
+        <li>BLTA had some entries for which the day_open was $196. Only those were deleted. 32 records were deleted.</li>
+        <li>AMOVF had no historical price data at all, so all of its records were deleted.</li>
+        <li>After the above points were cleaned up, we still had a few records where the maximum day_open was 35.64. After investigation, they all belonged to ticker CSA. CSA had 141 days where the day open was greater than 30. So that was OK.</li>
+      </ul>
+      <p>30707 records were left after cleanups.</p>
+
+      <p>The records collected had the following attributes <i>date, ticker, day_open, day_close, day_high, day_low, day_volume, and avg_daily_volume.</i></p>
+      <p>This data was used to derive more features (attributes) such as <i>two_day_volume, three_day_volume</i>, and more. The reason for this was to see if a certain set of features would better predict whether a stock would close a winner or a loser. Therefore, in total, the following attributes were derived:</p>
+      <blockquote><p>id, date, ticker, day_open, day_close, day_high, day_low, prev_day_high, prev_day_low, day_volume, two_day_volume, three_day_volume, four_day_volume, five_day_volume, six_day_volume, seven_day_volume, eight_day_volume, nine_day_volume, ten_day_volume, three_week_volume, one_month_volume, avg_daily_volume, day_winner</p></blockquote>
+
+      <h4>Selecting Features</h4>
+      <p>Next, it was time to choose a subset of the above features that would help predict whether a stock would close a winner or loser. WEKA’s attribute selection tool includes several algorithms to help choose a subset of features. A few notable ones were GainRatioAttributeEval, InfoGainAttributeEval, and ClassifierSubsetEval.</p>
+
+      <p>ClassifierSubsetEval evaluates attribute subsets on training data or a seperate hold out testing set. Since it was thought that a classification tree may be best for predicting results in this project, choosing attributes by testing them out on a classification tree model sounded like a good idea - and that is what ClassifierSubsetEval does. The evaluator was told to test attributes on a J48 Tree exhaustively, using training data. By using ExhaustiveSearch as the search method, the evaluator performed an exhaustive search through the space of attribute subsets starting from the empty set of attributes. This meant that it would be slow but exhaustive. Based on the results, the following attributes were chosen:</p>
+      <blockquote><p>
+        ticker<br />
+        three_day_volume<br />
+        six_day_volume<br />
+        seven_day_volume<br />
+        prev_day_percent_change_price<br />
+        prev_day_percent_change_volume<br />
+        day_winner</p></blockquote>
+
+
+      <h4>Selecting the Model</h4>
+      <p>Now it was time to choose a classifier. The training data set was initially run through the ZeroR rule classifier, in order to come up with baseline results that can be used to compare other classifiers to. ZeroR is good for this, because it takes into consideration 0 features, and just returns the value of the class. So if a classifier/feature set combination can beat the results of ZeroR, then it is a worthy model.</p>
+      <p>Next, several classifiers were trained on the same training data, and tested on the same testing data as ZeroR above. The one with the best results was a J48 Tree with WEKA’s default parameters, including confidenceFactor of 0.25 and minNumObj of 2. The following confusion matrix briefly summarizes the results:
+      <code>
+        === Confusion Matrix ===
+        a    b   <-- classified as
+        194  772 |    a = t
+        263 1837 |    b = f</code></p>
+
+
+      <h4>Evaluation</h4>
+      <p>Looking at the confusion matrix, one can see that the model produced 194 true positives, 772 false negatives, 263 false positives, and 1837 true negatives. With regard to our application of the model, we could not afford false positives (model says buy, and stock loses), because we would end up spending money on losing stocks. It was OK to have false negatives (model says do not buy, and stock wins), although we wish they were predicted correctly to not miss out on those gains. It was also good to predict true negatives because those were potential losses averted.</p>
+      <p>Comparing this model’s results with the results of ZeroR previously, the model performed worse than ZeroR. This meant that it was better to just not play penny stocks with our model, since ZeroR showed us that we would end up with a losing stock around 68.5% of the time.</p>
+
+
+      <h2>The Results</h2>
+      <p>The results showed that historical price data alone is not enough to predict stock performance. Next steps are to collect promotional data from online forums and newsletters and combine it with the previously collected price data in an attempt to produce better results.</p>
+
+      <p>Thank you for reading along! I hope you enjoyed. Feel free to <a href="mailto:jmoujes@gmail.com?subject=[Skedjit]%20Feedback">email me feedback</a> and <a href="index.html">see more projects</a>!</p>
+    </article>
+
+  </div> <!-- end container div -->
+
+</body>
+
+</html>

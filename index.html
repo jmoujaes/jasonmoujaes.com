@@ -8,9 +8,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- link stylesheets -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
     <!-- pull in config values -->
     <script src="js/config.js"></script>
@@ -21,12 +21,10 @@
       <div class="card-columns">
 
       <!-- Bio -->
-      <div class="card p-3 border border-light">
-        <h2 class="card-title text-center text-muted">About Me</h2>
-        <a id="profilepic-full"><img id="profilepic-thumb" class="img-fluid img-thumbnail w-75 rounded mx-auto d-block border border-dark" src="#"></a>
-
-        <div class="card-body ml-4">
-          <h3 id="profilename">My Name</h3>
+      <div class="card p-3 border border-dark">
+        <a id="profilepic-full"><img id="profilepic-thumb" class="img-fluid img-thumbnail w-75 rounded mx-auto d-block border border-light" src="#"></a>
+        <div class="card-body">
+          <h3 id="profilename" class="card-title">My Name</h3>
           <p id="bio" class="card-text"></p>
           <p id="email" class="card-text">&#128231;&nbsp;<a id="email-link"></a></p> <!-- &#128231; is the email character -->
         </div>
@@ -34,32 +32,118 @@
 
       <!-- Social -->
       <div class="card p-3 border border-dark">
-        <h2 class="card-title text-center text-muted">Look Here</h2>
-        <ul class="list-group list-group-flush">
-          <li id="github" class="list-group-item">
-            <a id="github-link" target="_blank"><i class="fa fa-github"></i>  Github</a>
-          </li>
-          <li id="linkedin" class="list-group-item">
-            <a id="linkedin-link" target="_blank"><i class="fa fa-linkedin"></i>  LinkedIn</a>
-          </li>
-          <li id="twitter" class="list-group-item">
-            <a id="twitter-link" target="_blank"><i class="fa fa-twitter"></i>  Twitter</a>
-          </li>
-          <li id="facebook" class="list-group-item">
-            <a id="facebook-link" target="_blank"><i class="fa fa-facebook"></i>  Facebook</a>
-          </li>
-          <li id="resume" class="list-group-item">
-            <a id="resume-link" target="_blank"><i class="fa fa-file-pdf-o"></i> Resume</a>
-          </li>
-        </ul>
+        <div class="card-body">
+          <h3 class="card-title">For Reference</h3>
+          <ul class="list-group list-group-flush">
+            <li id="github" class="list-group-item">
+              <a id="github-link" target="_blank"><i class="fa fa-github"></i>  Github</a>
+            </li>
+            <li id="linkedin" class="list-group-item">
+              <a id="linkedin-link" target="_blank"><i class="fa fa-linkedin"></i>  LinkedIn</a>
+            </li>
+            <li id="twitter" class="list-group-item">
+              <a id="twitter-link" target="_blank"><i class="fa fa-twitter"></i>  Twitter</a>
+            </li>
+            <li id="facebook" class="list-group-item">
+              <a id="facebook-link" target="_blank"><i class="fa fa-facebook"></i>  Facebook</a>
+            </li>
+            <li id="resume" class="list-group-item">
+              <a id="resume-link" target="_blank"><i class="fa fa-file-pdf-o"></i> Resume</a>
+            </li>
+          </ul>
+        </div> <!-- end card-body -->
       </div> <!-- end social -->
 
       <!-- This Site -->
-      <div class="card p-3 border border-success">
-        <p class="card-text">This site template is available on <a id="projectsite" target="_blank" href="#">GitHub</a> for anyone to use. It is easily configurable via a config file. It can also be extended to fit your portfolio needs. Simply add more cards that showcase previous projects, education, etc.</p> 
+      <div class="card p-3 border border-primary">
+        <div class="card-body">
+          <p class="card-text">This site template is available on <a id="projectsite" target="_blank" href="#">GitHub</a> for anyone to use. It is easily configurable via a config file. It can also be extended to fit your portfolio needs. Simply add more cards that showcase previous projects, education, etc.</p> 
+        </div>
       </div>
 
       <!-- Extendable Cards -->
+
+      <!-- Skedjit -->
+      <div class="card p-3 border border-dark">
+        <div class="card-body">
+          <h3 class="card-title">Skedjit</h3>
+          <p class="card-text"><small>Flask, PostgreSQL, Python, SQLAlchemy.</small></p>
+          <p class="card-text">Give people an easy way to create events and share them with their friends!</p>
+          <p class="card-text"><a href="skedjit.html">Read more!</a></p>
+        </div>
+      </div> <!-- end Skedjit -->
+
+      <!-- Penny Mining -->
+      <div class="card p-3 border border-dark">
+        <div class="card-body">
+          <h3 class="card-title">Penny Mining</h3>
+          <p class="card-text"><small>Machine learning, PostgreSQL, Python, Scrapy, SQLAlchemy, WEKA.</small></p>
+          <p class="card-text">Use machine learning to predict whether a penny stock will close up or down the next day.</p>
+          <p class="card-text"><a href="pennymine.html">Read more!</a></p>
+        </div>
+      </div> <!-- end Penny Mining -->
+
+      <!-- Municipality Site -->
+      <div class="card p-3 border border-dark">
+        <div class="card-body">
+          <a href="http://www.shweir.gov.lb/" target="_blank"><img class="card-img-top" src="img/shweirlogo.jpg"></a>
+          <p class="card-text"><small>CSS, HTML, Javascript, Joomla.</small></p>
+          <p class="card-text">Refresh the municipality's website in a way that is useful for the people, and easy for the municipality to manage.</p>
+          <p class="card-text"><a href="shweir.html">Read more!</a></p>
+        </div>
+      </div> <!-- end Municipality Site -->
+
+      <!-- SpringToShape Site -->
+      <div class="card p-3 border border-dark">
+        <div class="card-body">
+          <a href="http://www.springtoshape.com/" target="_blank"><img class="card-img-top" src="img/springtoshape.jpg"></a>
+          <p></p>
+          <p class="card-text"><small>CSS, HTML, Javscript.</small></p>
+          <p class="card-text">Improve the health, confidence, and way of life of Northern Virginians by delivering fitness sessions right to their doorsteps!</p>
+          <p class="card-text"><a href="springtoshape.html">Read more!</a></p>
+        </div>
+      </div> <!-- end SpringToShape Site -->
+
+      <!-- Pair-P Project -->
+      <div class="card p-3 border border-dark">
+        <div class="card-body">
+          <h3 class="card-title">Pair-P</h3>
+          <p class="card-text"><small>Flask, Flask-SocketIO, Python.</small></p>
+          <p class="card-text">Write code with friends in google-docs like fashion.</p>
+          <p class="card-text"><a href="pairp.html">Read more!</a></p>
+        </div>
+      </div> <!-- end Pair-P Project -->
+
+      <!-- VPN Client -->
+      <div class="card p-3 border border-dark">
+        <div class="card-body">
+          <h3 class="card-title">VPN Client</h3>
+          <p class="card-text"><small>Docopt, OpenVPN, PyInstaller, Python, Vagrant.</small></p>
+          <p class="card-text">Create a command-line tool to check on the health and speed of multiple VPN servers.</p>
+          <p class="card-text"><a href="vpn-cli.html">Read more!</a></p>
+        </div>
+      </div> <!-- end VPN Client -->
+
+      <!-- Virtualized Browser -->
+      <div class="card p-3 border border-dark">
+        <div class="card-body">
+          <h3 class="card-title">Virtualized Browser</h3>
+          <p class="card-text"><small>Django, Javascript, MariaDB, Python, SQL, Xojo.</small></p>
+          <p class="card-text">Develop and maintain a browser solution that protects you and your network from threats on the internet.</p>
+          <p class="card-text"><a href="virtualbrowser.html">Read more!</a></p>
+        </div>
+      </div> <!-- end Virtualized Browser -->
+
+      <!-- Admin Panel -->
+      <div class="card p-3 border border-dark">
+        <div class="card-body">
+          <h3 class="card-title">Admin Panel</h3>
+          <p class="card-text"><small>Angular, Bootstrap, Bower, CSS, Grunt, HTML, Javascript, Jasmine, Karma.</small></p>
+          <p class="card-text">Give administrators an aesthetic overview of their deployment.</p>
+          <p class="card-text"><a href="adminpanel.html">Read more!</a></p>
+        </div>
+      </div> <!-- end Admin Panel -->
+      <!-- end Extendable Cards -->
 
       </div> <!-- end card-columns -->
     </div> <!-- end container -->
