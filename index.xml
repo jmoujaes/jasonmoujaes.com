@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jason Moujaes</title>
+    <link>https://jasonmoujaes.com/</link>
+    <description>Recent content on Jason Moujaes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 25 May 2018 19:26:18 -0700</lastBuildDate>
+    
+	<atom:link href="https://jasonmoujaes.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Skedjit - Flask, PostgreSQL, Python, SQLAlchemy</title>
+      <link>https://jasonmoujaes.com/projects/skedjit/</link>
+      <pubDate>Fri, 25 May 2018 19:26:18 -0700</pubDate>
+      
+      <guid>https://jasonmoujaes.com/projects/skedjit/</guid>
+      <description>Technologies used: Flask, PostgreSQL, Python, SQLAlchemy.
+Source code: https://github.com/jmoujaes/skedjit
+The Objective Give people an easy way to create events and share them with friends.
+The Process This section will go over the tools that were used, the tasks that had to be completed, and some interesting features that were implemented.
+Skedjit was a weekend project between me and a friend. We split the work into backend and frontend. I took the backend.</description>
+    </item>
+    
+    <item>
+      <title>More About Me</title>
+      <link>https://jasonmoujaes.com/more-about-me/</link>
+      <pubDate>Thu, 10 May 2018 11:10:35 -0700</pubDate>
+      
+      <guid>https://jasonmoujaes.com/more-about-me/</guid>
+      <description>Previous accomplishments include  Improving customer experience by reducing app launch time 30%. Achieving 90% unit test coverage, leading to fewer regressions and happier users. Saving engineer time, company money by creating automated integration tests. Working with a team of 15 in an Agile environment. Protecting users from malware by integrating AV with product. Receiving training on securing web apps with the SANS Institute
+  I have extensive experience in  Python HTML/CSS/JavaScript Django AngularJS jQuery Bootstrap MySQL Flask Linux Git</description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>https://jasonmoujaes.com/resume/</link>
+      <pubDate>Fri, 04 May 2018 08:03:59 -0700</pubDate>
+      
+      <guid>https://jasonmoujaes.com/resume/</guid>
+      <description>PDF Version</description>
+    </item>
+    
+    <item>
+      <title>VPN CLI - Docopt, OpenVPN, PyInstaller, Python, Vagrant</title>
+      <link>https://jasonmoujaes.com/projects/vpn-cli/</link>
+      <pubDate>Sun, 14 Jan 2018 10:18:24 -0700</pubDate>
+      
+      <guid>https://jasonmoujaes.com/projects/vpn-cli/</guid>
+      <description>Technologies Used: Docopt, OpenVPN, PyInstaller, Python, Vagrant.
+The Objective Create a command-line tool to check on the health, connectivity, and speed of multiple VPN servers.
+The Process This was a project I worked on at a previous employer. I can get into a little more detail in person. Feel free to email me and see more projects!
+The Result Proactive alerts on the health of our VPN servers. This resulted in less downtime for customers, and a better understanding of performance for the engineering and management teams.</description>
+    </item>
+    
+    <item>
+      <title>Virtualized Web Browser - Django, Javascript, MariaDB, Python, SQL, Xojo.</title>
+      <link>https://jasonmoujaes.com/projects/virtual-browser/</link>
+      <pubDate>Mon, 24 Jul 2017 09:41:13 -0700</pubDate>
+      
+      <guid>https://jasonmoujaes.com/projects/virtual-browser/</guid>
+      <description>Technologies Used: Antivirus Vendors, Django, Javascript, MariaDB, Python, SQL, Vagrant, Virtualbox, Xojo.
+The Objective Develop and maintain a browser solution that protects you and your network from threats on the internet.
+The Process This was a project I worked on at a previous employer. I can get into a little more detail in person. Feel free to email me and see more projects!
+The Result A secure internet browser trusted by thousands of users to protect them on the internet.</description>
+    </item>
+    
+    <item>
+      <title>Pennymine - PostgreSQL, Python, Scrapy, SQLAlchemy, WEKA</title>
+      <link>https://jasonmoujaes.com/projects/pennymine/</link>
+      <pubDate>Wed, 16 Nov 2016 11:00:00 -0500</pubDate>
+      
+      <guid>https://jasonmoujaes.com/projects/pennymine/</guid>
+      <description>Technologies used: PostgreSQL, Python, Scrapy, SQLAlchemy, WEKA.
+Paper: https://drive.google.com/
+The Objective Use machine learning to predict whether a penny stock will close up or down the next day.
+The Process This section will go over the tools used, and the tasks that were completed to see this project through.
+At a high level, penny stock data needed to be collected. Then it was cleaned to remove inconsistencies and anomalies. After that, features were chosen that were thought to produce more accurate predictions.</description>
+    </item>
+    
+    <item>
+      <title>Admin Portal - Angular, Bootstrap, Bower, Jasmine, Karma</title>
+      <link>https://jasonmoujaes.com/projects/adminpanel/</link>
+      <pubDate>Thu, 01 Sep 2016 20:07:36 -0700</pubDate>
+      
+      <guid>https://jasonmoujaes.com/projects/adminpanel/</guid>
+      <description>Technologies Used: Angular, Bootstrap, Bower, CSS, Grunt, HTML, Javascript, Jasmine, Karma.
+The Objective Give administrators an aesthetic overview of their deployment.
+The Process This was a project I worked on at a previous employer. I can get into a little more detail in person. Feel free to email me and see more projects!
+The Result A single-page web app that allowed administrators to manage their deployment. It was trusted by admins to manage thousands of users.</description>
+    </item>
+    
+  </channel>
+</rss>
